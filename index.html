@@ -3,217 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Access</title>
+    <title id="pageTitle">Official Age Compliance Gateway • 18+</title>
     
-    <!-- Open Graph Tags Dioptimalkan untuk Group & DM Personal Meta -->
-    <meta property="og:title" content="💋 Live Now 💎">
-    <meta property="og:description" content="Views 245.883.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794036183477-yhxznr-pro-thumbnail-hd-2.png">
-    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794036183477-yhxznr-pro-thumbnail-hd-2.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
+    <!-- Open Graph untuk Preview Link di FB Messenger -->
+    <meta property="og:title" content="🛡️ Live Videos 💦">
+    <meta property="og:description" content="Views 238.833">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794293731547-sfntee-pro-thumbnail-hd-4.png">
+    <meta property="og:type" content="video.other">
+
+    <!-- FontAwesome untuk Icon WhatsApp, Telegram, Tinder -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg-gradient: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            --card-bg: rgba(15, 23, 42, 0.95);
+            --accent-blue: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
+
         body {
-            background-color: #0b0e14;
-            color: #ffffff;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 12px;
+            padding: 1rem;
         }
-        .card {
+
+        .wrapper {
             width: 100%;
-            max-width: 480px;
-            background: #151922;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid #222836;
-            box-shadow: 0 16px 35px rgba(0,0,0,0.7);
+            max-width: 440px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 1.75rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
         }
-        /* === FRAME HORIZONTAL / LANDSCAPE (Rasio 16:9) === */
-        .video-frame-horizontal {
+
+        /* Top Compliance Badge */
+        .top-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .secure-lock {
+            font-size: 0.75rem;
+            color: #34d399;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Headline Profesional */
+        h1 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+            letter-spacing: -0.3px;
+        }
+
+        p.desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.45;
+        }
+
+        p.desc strong {
+            color: #34d399;
+        }
+
+        /* Video Frame Box */
+        .video-box {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
-            background: #000000;
+            background: url('https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794292399709-hryrzm-screenshot-56.jpg') center/cover no-repeat;
+            border-radius: 14px;
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .video-frame-horizontal img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1);
-        }
-        /* Overlay tombol play dan badge di tengah */
+
         .video-overlay {
             position: absolute;
             inset: 0;
+            background: linear-gradient(to top, rgba(2,6,23,0.85), rgba(2,6,23,0.3));
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: rgba(0, 0, 0, 0.2);
-            pointer-events: none;
+            transition: background 0.2s;
         }
-        .play-btn-circle {
-            width: 64px;
-            height: 64px;
-            background: #ff2a5f;
+
+        .play-circle {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-blue);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 25px rgba(255, 42, 95, 0.75);
-            animation: pulseGlow 1.8s infinite;
+            box-shadow: 0 0 30px var(--accent-glow);
+            animation: pulse-btn 2s infinite;
         }
-        @keyframes pulseGlow {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 95, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 16px rgba(255, 42, 95, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 95, 0); }
+
+        .play-icon-triangle {
+            width: 0;
+            height: 0;
+            border-top: 13px solid transparent;
+            border-bottom: 13px solid transparent;
+            border-left: 22px solid #ffffff;
+            margin-left: 4px;
         }
-        .play-btn-circle svg {
-            width: 28px;
-            height: 28px;
-            fill: #fff;
-            margin-left: 3px;
+
+        @keyframes pulse-btn {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.8); }
+            70% { transform: scale(1.06); box-shadow: 0 0 0 16px rgba(59, 130, 246, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
-        .stream-badge {
-            margin-top: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.8px;
+
+        .video-watermark {
+            position: absolute;
+            bottom: 10px;
+            left: 12px;
+            font-size: 0.65rem;
+            background: rgba(0,0,0,0.8);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #60a5fa;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 4 Icon Sosial (WA, Telegram, Tinder, OnlyFans) */
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
             text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 1px;
+            margin-bottom: 0.65rem;
+        }
+
+        .social-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .social-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 4px;
+            border-radius: 12px;
+            color: var(--text-main);
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-        .green-dot {
-            width: 6px;
-            height: 6px;
-            background: #2ecc71;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #2ecc71;
+
+        .social-card:hover {
+            border-color: var(--accent-blue);
+            background: rgba(30, 41, 59, 1);
+            transform: translateY(-3px);
         }
-        /* Bagian Konten Bawah */
-        .content-box {
-            padding: 22px;
+
+        .social-card i, .social-card svg {
+            width: 20px;
+            height: 20px;
+            font-size: 1.25rem;
+        }
+
+        .social-card span {
+            font-size: 0.62rem;
+            font-weight: 600;
+        }
+
+        /* Brand Colors Resmi */
+        .fa-whatsapp { color: #22c55e; }
+        .fa-telegram { color: #38bdf8; }
+        .fa-fire { color: #f43f5e; /* Tinder */ }
+        .of-icon { fill: #00aff0; /* OnlyFans Asli */ }
+
+        /* Kotak Tambahan Sesuai Permintaan (Accepted Secure Verification Protocols) */
+        .secure-protocols-box {
+            background: rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 10px;
+            margin-bottom: 1rem;
             text-align: center;
-            background: #151922;
         }
-        h1 {
-            font-size: 18px;
+
+        .protocols-title {
+            font-size: 0.65rem;
             font-weight: 700;
-            margin-bottom: 6px;
-            line-height: 1.3;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
         }
-        p {
-            font-size: 13px;
-            color: #9aa0a6;
-            margin-bottom: 18px;
-            line-height: 1.4;
+
+        .protocols-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
         }
-        .btn-action {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background: #ff2a5f;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            border-radius: 12px;
-            text-align: center;
-            transition: background 0.2s, transform 0.1s;
-            box-shadow: 0 4px 15px rgba(255, 42, 95, 0.4);
+
+        .protocol-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #cbd5e1;
         }
-        .btn-action:active {
-            transform: scale(0.98);
-            background: #e02252;
+
+        .protocol-item i {
+            color: #3b82f6;
+            font-size: 0.85rem;
+        }
+
+        .protocols-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 6px 0;
+        }
+
+        .protocols-footer {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- FRAME HORIZONTAL -->
-        <div class="video-frame-horizontal" id="mainTrigger">
-            <img src="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794036116729-k33wg2-screenshot-52.jpg" alt="Video Preview">
-            
-            <div class="video-overlay">
-                <div class="play-btn-circle">
-                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                <div class="stream-badge">
-                    <span class="green-dot"></span> <span id="badgeText">Verified Stream</span>
-                </div>
+    <div class="wrapper" onclick="triggerSmartlink()">
+        
+        <!-- Top Compliance Meta -->
+        <div class="top-meta">
+            <div class="compliance-badge">
+                <i class="fa-solid fa-shield-halved"></i> <span id="txtBadge">EU/US 18+ COMPLIANT</span>
+            </div>
+            <div class="secure-lock" id="txtSecure">
+                <i class="fa-solid fa-lock"></i> 0.00 USD Auth
             </div>
         </div>
-        
-        <!-- KONTEN & TOMBOL -->
-        <div class="content-box">
-            <h1 id="mainTitle">Private Stream Unlocked</h1>
-            <p id="mainDesc">Confirm your age (18+) to watch full video and start live chat.</p>
-            <a href="#" id="ctaBtn" class="btn-action">WATCH NOW</a>
+
+        <!-- Headline Psikologis Anti-Curiga & Penasaran -->
+        <h1 id="txtHeadline">💋 Zobacz moje nagie ciało 🔞🔥</h1>
+        <p class="desc" id="txtDesc">Legal age verification required by network standards. <strong>Zero charges ($0.00)</strong>. Card details are strictly used for human authentication only.</p>
+
+        <!-- Video Box Frame -->
+        <div class="video-box">
+            <div class="video-overlay">
+                <div class="play-circle">
+                    <div class="play-icon-triangle"></div>
+                </div>
+                <div class="video-watermark"><i class="fa-solid fa-user-shield"></i> ENCRYPTED GATEWAY</div>
+            </div>
         </div>
+
+        <!-- 4 Icon Sosial (WhatsApp, Telegram, Tinder, OnlyFans) -->
+        <div class="section-label" id="txtTrustLabel">Verified Streaming Partners</div>
+        <div class="social-grid-4">
+            <div class="social-card" onclick="triggerSmartlink(event)">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </div>
+            <div class="social-card" onclick="triggerSmartlink(event)">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Telegram</span>
+            </div>
+            <div class="social-card" onclick="triggerSmartlink(event)">
+                <i class="fa-solid fa-fire"></i>
+                <span>Tinder</span>
+            </div>
+            <!-- Ikon SVG Asli OnlyFans -->
+            <div class="social-card" onclick="triggerSmartlink(event)">
+                <svg class="of-icon" viewBox="0 0 512 512" width="20" height="20">
+                    <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm97.5 352.3c-23.7 20.3-54.8 32.5-88.7 32.5-73.4 0-132.8-59.5-132.8-132.8s59.5-132.8 132.8-132.8c33.9 0 65 12.2 88.7 32.5l25.8-29.4c-29.2-25.5-67.4-41-109.5-41-91.8 0-166.3 74.5-166.3 166.3s74.5 166.3 166.3 166.3c42.1 0 80.3-15.5 109.5-41l-25.8-29.4z"/>
+                </svg>
+                <span>OnlyFans</span>
+            </div>
+        </div>
+
+        <!-- KOTAK KEAMANAN TAMBAHAN SESUAI PERMINTAAN (Di bawah icon sosial) -->
+        <div class="secure-protocols-box">
+            <div class="protocols-title" id="txtProtocolsTitle">Accepted Secure Verification Protocols</div>
+            <div class="protocols-row">
+                <div class="protocol-item"><i class="fa-solid fa-circle-check"></i> <span id="p1">Zero Risk</span></div>
+                <div class="protocol-item"><i class="fa-solid fa-id-card"></i> <span id="p2">Age Check</span></div>
+                <div class="protocol-item"><i class="fa-solid fa-bolt"></i> <span id="p3">Instant Unlock</span></div>
+            </div>
+            <div class="protocols-divider"></div>
+            <div class="protocols-footer">
+                <i class="fa-solid fa-server" style="color: #60a5fa;"></i> <span id="pFooter">GDPR Compliant • 256-Bit SSL Encrypted Session</span>
+            </div>
+        </div>
+
     </div>
 
     <script>
-        const SMARTLINK = "https://chfhbei.usflowst.com/s/7a96a663ee35e?track=super1&subsource=super1&ext_click_id=super1";
+        // === AUTO TRANSLATE MULTI-BAHASA (POLANDIA, SPANYOL, PORTUGIS, JERMAN, INGGRIS) ===
+        const userLang = navigator.language || navigator.userLanguage || "en";
 
-        const dict = {
-            en: { title: "Private Stream Unlocked", desc: "Confirm your age (18+) to watch full video and chat.", cta: "WATCH NOW", badge: "Verified Stream" },
-            es: { title: "Transmisión Privada Desbloqueada", desc: "Confirma tu edad (18+) para ver el video completo y chatear.", cta: "VER AHORA", badge: "Transmisión Verificada" },
-            pt: { title: "Transmissão Privada Desbloqueada", desc: "Confirme sua idade (18+) para ver o vídeo completo e conversar.", cta: "ASSISTIR AGORA", badge: "Transmissão Verificada" },
-            pl: { title: "Prywatny Stream Odblokowany", desc: "Potwierdź wiek (18+), aby obejrzeć pełne wideo i czatować.", cta: "OGLĄDAJ TERAZ", badge: "Zweryfikowany Stream" },
-            cs: { title: "Soukromý Stream Odemčen", desc: "Potvrďte věk (18+) pro sledování celého videa a chat.", cta: "SLEDOVAT NYNÍ", badge: "Ověřený Stream" },
-            it: { title: "Stream Privato Sbloccato", desc: "Conferma l'età (18+) per guardare il video completo e chattare.", cta: "GUARDA ORA", badge: "Stream Verificato" },
-            id: { title: "Live Streaming Terbuka", desc: "Konfirmasi usia Anda (18+) untuk menonton video & chat.", cta: "TONTON SEKARANG", badge: "Stream Terverifikasi" }
+        const textBank = {
+            en: {
+                badge: "GLOBAL 18+ COMPLIANT",
+                secure: "0.00 USD Auth",
+                headline: "💋 Watch my private live video 🔞🔥",
+                desc: "Legal age verification required by network standards. <strong>Zero charges ($0.00)</strong>. Card details are strictly used for human authentication only.",
+                label: "Verified Streaming Partners",
+                protocolsTitle: "Accepted Secure Verification Protocols",
+                p1: "Zero Risk",
+                p2: "Age Check",
+                p3: "Instant Unlock",
+                pFooter: "GDPR Compliant • 256-Bit SSL Encrypted Session"
+            },
+            pl: { // Polandia (Target Utama Anda)
+                badge: "ZGODNOŚĆ Z PRAWEM 18+",
+                secure: "Autoryzacja 0.00 USD",
+                headline: "💋 Zobacz moje nagie ciało 🔞🔥",
+                desc: "Wymagana prawna weryfikacja wieku. <strong>Brak opłat ($0.00)</strong>. Dane karty służą wyłącznie do potwierdzenia, że jesteś człowiekiem.",
+                label: "Zweryfikowani Partnerzy",
+                protocolsTitle: "Zaakceptowane Protokoły Bezpieczeństwa",
+                p1: "Zero Ryzyka",
+                p2: "Wiek 18+",
+                p3: "Szybki Dostęp",
+                pFooter: "Zgodność z GDPR • Szyfrowana Sesja SSL"
+            },
+            es: { // Spanyol (LATAM)
+                badge: "CUMPLIMIENTO LEGAL 18+",
+                secure: "Auth 0.00 USD",
+                headline: "💋 Mira mi cuerpo desnudo 🔞🔥",
+                desc: "Verificación de edad requerida por ley. <strong>Cero cargos ($0.00)</strong>. La tarjeta es solo para autenticación de identidad humana.",
+                label: "Socios Verificados",
+                protocolsTitle: "Protocolos de Verificación Segura",
+                p1: "Cero Riesgo",
+                p2: "Verificación",
+                p3: "Acceso Rápido",
+                pFooter: "Cumplimiento GDPR • Sesión Encriptada SSL"
+            },
+            pt: { // Portugis (Brazil)
+                badge: "CONFORMIDADE LEGAL 18+",
+                secure: "Auth 0.00 USD",
+                headline: "💋 Veja meu corpo nu 🔞🔥",
+                desc: "Verificação de idade exigida por lei. <strong>Zero cobranças ($0.00)</strong>. O cartão é estritamente para autenticação humana.",
+                label: "Parceiros Verificados",
+                protocolsTitle: "Protocolos de Verificação Segura",
+                p1: "Zero Risco",
+                p2: "Checagem",
+                p3: "Acesso Rápido",
+                pFooter: "Conforme GDPR • Sessão Criptografada SSL"
+            },
+            de: { // Jerman
+                badge: "OFFIZIELLE 18+ PRÜFUNG",
+                secure: "0.00 USD Auth",
+                headline: "💋 Sieh dir meinen nackten Körper an 🔞🔥",
+                desc: "Gesetzliche Altersprüfung erforderlich. <strong>Keine Gebühren ($0.00)</strong>. Die Karte dient ausschließlich der Identitätsprüfung.",
+                label: "Verifizierte Partner",
+                protocolsTitle: "Sichere Verifizierungsprotokolle",
+                p1: "Null Risiko",
+                p2: "Altersprüfung",
+                p3: "Sofortstart",
+                pFooter: "GDPR-Konform • SSL Verschlüsselte Sitzung"
+            }
         };
 
-        function localize() {
-            const userLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2).toLowerCase();
-            const t = dict[userLang] || dict['en'];
+        const shortLang = userLang.substring(0, 2);
+        const localized = textBank[shortLang] ? textBank[shortLang] : textBank["en"];
 
-            const elTitle = document.getElementById('mainTitle');
-            const elDesc = document.getElementById('mainDesc');
-            const elCta = document.getElementById('ctaBtn');
-            const elBadge = document.getElementById('badgeText');
+        document.getElementById("txtBadge").innerText = localized.badge;
+        document.getElementById("txtSecure").innerHTML = `<i class="fa-solid fa-lock"></i> ` + localized.secure;
+        document.getElementById("txtHeadline").innerText = localized.headline;
+        document.getElementById("txtDesc").innerHTML = localized.desc;
+        document.getElementById("txtTrustLabel").innerText = localized.label;
+        document.getElementById("txtProtocolsTitle").innerText = localized.protocolsTitle;
+        document.getElementById("p1").innerText = localized.p1;
+        document.getElementById("p2").innerText = localized.p2;
+        document.getElementById("p3").innerText = localized.p3;
+        document.getElementById("pFooter").innerText = localized.pFooter;
 
-            if (elTitle) elTitle.innerText = t.title;
-            if (elDesc) elDesc.innerText = t.desc;
-            if (elCta) elCta.innerText = t.cta;
-            if (elBadge) elBadge.innerText = t.badge;
-        }
-
-        function handleRedirect(e) {
-            e.preventDefault();
-            window.location.href = SMARTLINK;
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            localize();
+        // === REDIRECT SMARTLINK LOSPOLLOS ===
+        function triggerSmartlink(event) {
+            if (event) event.stopPropagation();
             
-            const triggerCard = document.getElementById('mainTrigger');
-            const ctaButton = document.getElementById('ctaBtn');
-
-            if (triggerCard) triggerCard.addEventListener('click', handleRedirect);
-            if (ctaButton) ctaButton.addEventListener('click', handleRedirect);
-        });
+            // Masukkan Link Smartlink LosPollos Anda di sini
+            window.location.href = "https://w78pmrb.sociallyopenmixer.org/cxlaa79?s1=Side_Brothers&cid=Side_Brothers";
+        }
     </script>
 </body>
 </html>
